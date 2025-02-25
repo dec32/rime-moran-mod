@@ -1,0 +1,262 @@
+# 可使用
+# __patch: moran.custom:/patch?
+# 手動引入此補丁
+
+patch:
+  # 簡快碼提示符
+  moran/quick_code_indicator: "◉"
+  
+  # 簡快碼拼写提示
+  moran/enable_quick_code_hint: true
+  moran/quick_code_hint_skip_chars: true
+
+  # 四码单字
+  moran/show_chars_anyway: false
+  
+  # 完全定义开关列表，添加用于在字形標準間切换的三態开关
+  switches: 
+    - name: ascii_mode
+      states: [ 中文, 西文 ]
+    - options: [ std_opencc, std_priv, std_simp ]
+      states: [ 正, 歪, 简 ]
+      reset: 2
+    - name: extended_charset
+      states: [ 通用, 增廣 ]
+    - name: ascii_punct
+      states: [ 。，, ．， ]
+    # Emoji 常关，默认简化器常关，拆字提示按需开启
+    - name: emoji
+      reset: 0
+    - name: simplification
+      reset: 0
+    - name: chaifen
+    # 用不到的开关，放在這裡备用
+    - name: inflexible
+    - name: full_shape
+    - name: unicode_comment
+
+
+  # 在 uniquifier 前增加两个自定义简化器
+  engine/filters:
+    - lua_filter@*moran_charset_filter
+    - lua_filter@*moran_reorder_filter
+    - lua_filter@*moran_aux_hint
+    - lua_filter@*moran_quick_code_hint
+    - simplifier@chaifen
+    - simplifier@emoji
+    - simplifier@std_simp
+    - simplifier@std_priv
+    - uniquifier
+
+  # 自定簡化器
+  std_priv:
+    opencc_config: t2p.json
+    option_name: std_priv
+
+  # 標準簡化器
+  std_simp:
+    opencc_config: moran_t2s.json
+    option_name: std_simp
+
+  # 停止使用反引号引导虎码反查
+  recognizer/patterns/reverse_tiger: "^ohu[A-Za-z]*$" 
+  
+  # 不使用分号引导標点
+  speller/alphabet: abcdefghijklmnopqrstuvwxyz/
+
+  # 优化拆字提示的格式
+  chaifen/comment_format:
+    # 过滤为空的拆分
+    - xform/〔\\..+〕// 
+    # 用 | 来分割多组拆分，而非用多组括号
+    - xform/〕〔/｜/
+    # 关闭编码提示
+    # - xform/[a-z]+//   
+  
+
+  # 自定義快捷鍵
+  key_binder/bindings:
+    # 音節間快速跳轉
+    - { when: has_menu, accept: "Tab", send: "Control+Right" }
+    - { when: composing, accept: "Tab", send: "Control+Right" }
+    # 功能开关
+    - { when: has_menu, accept: "Control+i", toggle: chaifen }
+    - { when: has_menu, accept: "Control+u", toggle: unicode_comment }
+    - { when: has_menu, accept: "Control+e", toggle: emoji }
+    - { when: composing, accept: "Control+x", toggle: extended_charset }
+    # 字形快速切換
+    - { accept: Control+Shift+T, set_option: std_opencc, when: always }
+    - { accept: Control+Shift+P, set_option: std_priv, when: always }
+    - { accept: Control+Shift+S, set_option: std_simp, when: always }
+    # 字形快速切换（候選窗）
+    - { accept: Control+t, set_option: std_opencc, when: has_menu }
+    - { accept: Control+p, set_option: std_priv, when: has_menu }
+    - { accept: Control+s, set_option: std_simp, when: has_menu }
+    # 字形遍歷
+    - { accept: Control+Shift+O, toggle: std_opencc, when: always }
+
+  # 使用鹤音
+  algebra/user_sentence_top/__append/+:
+    # 音码转成大写
+    - xform/^([a-z]+);/\U$1;/
+    # 把大写的音码翻译成鹤音
+    - xform/^BZ/bw/
+    - xform/^DZ/dw/
+    - xform/^FZ/fw/
+    - xform/^GZ/gw/
+    - xform/^HZ/hw/
+    - xform/^KZ/kw/
+    - xform/^LZ/lw/
+    - xform/^MZ/mw/
+    - xform/^NZ/nw/
+    - xform/^PZ/pw/
+    - xform/^SZ/sw/
+    - xform/^UZ/uw/
+    - xform/^TZ/tw/
+    - xform/^WZ/ww/
+    - xform/^ZZ/zw/
+    - xform/^VZ/vw/
+    - xform/^IP/iy/
+    - xform/^CP/cy/
+    - xform/^DP/dy/
+    - xform/^GP/gy/
+    - xform/^HP/hy/
+    - xform/^JP/jy/
+    - xform/^KP/ky/
+    - xform/^LP/ly/
+    - xform/^NP/ny/
+    - xform/^QP/qy/
+    - xform/^RP/ry/
+    - xform/^UP/uy/
+    - xform/^SP/sy/
+    - xform/^TP/ty/
+    - xform/^XP/xy/
+    - xform/^YL/yd/
+    - xform/^YP/yy/
+    - xform/^VP/vy/
+    - xform/^ZP/zy/
+    - xform/^BX/bp/
+    - xform/^DX/dp/
+    - xform/^JX/jp/
+    - xform/^LX/lp/
+    - xform/^MX/mp/
+    - xform/^NX/np/
+    - xform/^PX/pp/
+    - xform/^QX/qp/
+    - xform/^TX/tp/
+    - xform/^XX/xp/
+    - xform/^BL/bd/
+    - xform/^CL/cd/
+    - xform/^IL/id/
+    - xform/^DL/dd/
+    - xform/^GL/gd/
+    - xform/^HL/hd/
+    - xform/^KL/kd/
+    - xform/^LL/ld/
+    - xform/^ML/md/
+    - xform/^NL/nd/
+    - xform/^PL/pd/
+    - xform/^SL/sd/
+    - xform/^UL/ud/
+    - xform/^TL/td/
+    - xform/^WL/wd/
+    - xform/^ZL/zd/
+    - xform/^VL/vd/
+    - xform/^BY/bk/
+    - xform/^DY/dk/
+    - xform/^JY/jk/
+    - xform/^LY/lk/
+    - xform/^MY/mk/
+    - xform/^NY/nk/
+    - xform/^PY/pk/
+    - xform/^QY/qk/
+    - xform/^TY/tk/
+    - xform/^XY/xk/
+    - xform/^YY/yk/
+    - xform/^IY/ik/
+    - xform/^GY/gk/
+    - xform/^HY/hk/
+    - xform/^KY/kk/
+    - xform/^UY/uk/
+    - xform/^VY/vk/
+    - xform/^DD/dl/
+    - xform/^JD/jl/
+    - xform/^LD/ll/
+    - xform/^ND/nl/
+    - xform/^QD/ql/
+    - xform/^XD/xl/
+    - xform/^ID/il/
+    - xform/^GD/gl/
+    - xform/^HD/hl/
+    - xform/^KD/kl/
+    - xform/^UD/ul/
+    - xform/^VD/vl/
+    - xform/^IB/iz/
+    - xform/^CB/cz/
+    - xform/^DB/dz/
+    - xform/^FB/fz/
+    - xform/^GB/gz/
+    - xform/^HB/hz/
+    - xform/^KB/kz/
+    - xform/^LB/lz/
+    - xform/^MB/mz/
+    - xform/^NB/nz/
+    - xform/^PB/pz/
+    - xform/^RB/rz/
+    - xform/^UB/uz/
+    - xform/^SB/sz/
+    - xform/^TB/tz/
+    - xform/^YB/yz/
+    - xform/^VB/vz/
+    - xform/^ZB/zz/
+    - xform/^DW/dx/
+    - xform/^JW/jx/
+    - xform/^LW/lx/
+    - xform/^NW/nx/
+    - xform/^QW/qx/
+    - xform/^XW/xx/
+    - xform/^IW/ix/
+    - xform/^GW/gx/
+    - xform/^HW/hx/
+    - xform/^KW/kx/
+    - xform/^UW/ux/
+    - xform/^VW/vx/
+    - xform/^BK/bc/
+    - xform/^CK/cc/
+    - xform/^IK/ic/
+    - xform/^DK/dc/
+    - xform/^GK/gc/
+    - xform/^HK/hc/
+    - xform/^KK/kc/
+    - xform/^LK/lc/
+    - xform/^MK/mc/
+    - xform/^NK/nc/
+    - xform/^PK/pc/
+    - xform/^RK/rc/
+    - xform/^SK/sc/
+    - xform/^UK/uc/
+    - xform/^TK/tc/
+    - xform/^YK/yc/
+    - xform/^ZK/zc/
+    - xform/^VK/vc/
+    - xform/^BN/bb/
+    - xform/^JN/jb/
+    - xform/^LN/lb/
+    - xform/^MN/mb/
+    - xform/^NN/nb/
+    - xform/^PN/pb/
+    - xform/^QN/qb/
+    - xform/^XN/xb/
+    - xform/^YN/yb/
+    - xform/^BC/bn/
+    - xform/^DC/dn/
+    - xform/^JC/jn/
+    - xform/^LC/ln/
+    - xform/^MC/mn/
+    - xform/^NC/nn/
+    - xform/^PC/pn/
+    - xform/^QC/qn/
+    - xform/^TC/tn/
+    - xform/^XC/xn/
+    # 把大写转回小写
+    - xlit/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/
