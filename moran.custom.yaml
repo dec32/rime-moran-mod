@@ -95,6 +95,10 @@ patch:
     # 字形遍歷
     - { accept: Control+Shift+O, toggle: std_opencc, when: always }
 
+  # 使用鹤版固頂詞庫
+  schema/dependencies/@0: moran_fixed_flypy
+  fixed/dictionary: moran_fixed_flypy
+
   # 使用鹤音
   algebra/user_sentence_top/__append/+:
     # 音码转成大写
