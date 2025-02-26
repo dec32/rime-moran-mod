@@ -96,7 +96,6 @@ patch:
     - { accept: Control+Shift+O, toggle: std_opencc, when: always }
 
   # 使用鹤版固頂詞庫
-  schema/dependencies/@0: moran_fixed_flypy
   fixed/dictionary: moran_fixed_flypy
 
   # 使用鹤音
