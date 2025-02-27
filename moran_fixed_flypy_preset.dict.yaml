@@ -1,33 +1,91 @@
-##### 一字一簡 #####
-啊	a
-不	b
-才	c
-的	d
-得	d
-嗯	e
-發	f
-個	g
-和	h
-喫	i
-就	j
-看	k
-了	l
-沒	m
-你	n
-哦	o
-怕	p
-去	q
-人	r
-所	s
-他	t
-它	t
-是	u
-這	v
-我	w
-下	x
-有	y
-又	y
-在	z
+# Rime dictionary
+# encoding: utf-8
+# license: CC-BY-SA 4.0
+
+---
+name: moran_fixed_flypy
+version: "20240414"
+sort: by_weight
+columns:
+  - text
+  - code
+  - stem
+  - weight
+  - comment
+encoder:
+  rules:
+    - length_equal: 2
+      formula: "AaAbBaBb"
+    - length_equal: 3
+      formula: "AaBaCaCb"
+    - length_in_range: [4, 32]
+      formula: "AaBaCaZa"
+import_tables:
+  - moran_fixed.symbols
+...
+
+#----------標點符號----------#
+# 第一排
+：“	;q
+？	;w
+（	;e
+）	;r
+~	;t
+·	;y
+『	;u
+』	;i
+〖	;o
+〗	;p
+# 第二排
+！	;a
+……	;s
+#重複上屏	;d
+“	;f
+”	;g
+‘	;h
+’	;j
+——	;k
+%	;l
+；	;;
+# 第三排
+。”	;z
+？”	;x
+！”	;c
+【	;v
+】	;b
+《	;n
+》	;m
+
+##### 一簡（不讓二簡） #####
+啊	a	aa
+不	b	bu
+才	c	cd
+的	d	de
+得	d	de
+嗯	e	en
+發	f	fa
+個	g	ge
+和	h	he
+喫	i	ii
+就	j	jq
+看	k	kj
+了	l	le
+沒	m	mw
+你	n	ni
+哦	o	oo
+怕	p	pa
+去	q	qu
+人	r	rf
+所	s	so
+他	t	ta
+它	t	ta
+是	u	ui
+這	v	ve
+我	w	wo
+下	x	xx
+有	y	yz
+又	y	yz
+在	z	zd
 
 ##### 超級一簡 #####
 感覺	g
@@ -36,25 +94,11 @@
 可以	k
 沒有	m
 
-##### 一字二簡 #####
-的	de
-得	de
-嗯	en
-裏	li
-倆	ll
-群	qy
-他	ta
-它	ta
-有	yz
-又	yz
-在	zd
-再	zd
-字	zi
-
-##### 一字三簡 #####
+##### 單字三簡 #####
+左	zou
+右	yzk
 有	yzo
 友	yzy
-右	yzk
 擼  luf
 
 ##### 二字二簡 #####
@@ -1746,3 +1790,6 @@ B站	bvj
 ##### 四字四簡 #####
 椎名林檎	vmlq
 怎么這樣	zmvy
+
+
+#### schemagen.py ####
