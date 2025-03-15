@@ -3,7 +3,7 @@
 # license: CC-BY-SA 4.0
 
 ---
-name: moran_fixed_flypy
+name: moran_fixed.flypy
 version: "20240414"
 sort: by_weight
 columns:
@@ -81,6 +81,7 @@ import_tables:
 它	t	ta
 是	u	ui
 這	v	ve
+之	v	vidd
 我	w	wo
 下	x	xx
 有	y	yz
@@ -94,12 +95,19 @@ import_tables:
 可以	k
 沒有	m
 
+##### 單字二簡 #####
+只	vi
+
 ##### 單字三簡 #####
 左	zou
 右	yzk
 有	yzo
 友	yzy
-擼  luf
+擼	luf
+知	vik
+隻	viv
+製	viy
+武	wuv # 不用「弋」根
 
 ##### 二字二簡 #####
 啊對	ad
@@ -193,7 +201,6 @@ import_tables:
 開通	kt
 科學	kx
 浪費	lf
-買	md
 默認	mr
 貌似	ms
 明天	mt
@@ -552,7 +559,6 @@ B站	bvj
 點點頭	ddt
 大多數	ddu
 東道主	ddv
-的東西	ddx
 大動作	ddz
 開發者	dev
 豆腐塊	dfk
@@ -786,7 +792,6 @@ B站	bvj
 好心情	hxq
 好像是	hxu
 壞消息	hxx
-壞心眼	hxy
 黑匣子	hxz
 還有個	hyg
 好意思	hys
@@ -824,7 +829,6 @@ B站	bvj
 穿小鞋	ixx
 程序員	ixy
 出現在	ixz
-常言道	iyd
 差一個	iyg
 差異化	iyh
 差遠了	iyl
@@ -1003,7 +1007,7 @@ B站	bvj
 沒兵線	mbx
 買得到	mdd
 馬大哈	mdh
-馬德里	mdl
+麥當勞	mdl
 買東西	mdx
 沒膽子	mdz
 沒反應	mfy
@@ -1207,6 +1211,7 @@ B站	bvj
 若不是	rbu
 忍不住	rbv
 人聰明	rcm
+容錯率	rcl
 寄存器	reg
 人販子	rfz
 如果到	rgd
@@ -1786,6 +1791,9 @@ B站	bvj
 坐在那	zzn
 自尊心	zzx
 再怎樣	zzy
+
+#### 二字四簡 ####
+喫辣	iila
 
 ##### 四字四簡 #####
 椎名林檎	vmlq

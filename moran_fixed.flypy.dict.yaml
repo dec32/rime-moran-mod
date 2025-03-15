@@ -3,7 +3,7 @@
 # license: CC-BY-SA 4.0
 
 ---
-name: moran_fixed_flypy
+name: moran_fixed.flypy
 version: "20240414"
 sort: by_weight
 columns:
@@ -86,6 +86,7 @@ import_tables:
 它	t
 是	u
 這	v
+之	v
 我	w
 下	x
 有	y
@@ -558,7 +559,7 @@ import_tables:
 真	vf
 正	vg
 張	vh
-之	vi
+只	vi
 站	vj
 拽	vk
 裝	vl
@@ -1436,7 +1437,7 @@ B站	bvj
 大多數	ddu
 東道主	ddv
 玳	ddw
-的東西	ddx
+待	ddx
 袋	ddy
 大動作	ddz
 底	deg
@@ -1787,9 +1788,8 @@ B站	bvj
 二	era
 貳	erb
 茸	erc
-洱	erd
+尔	erd
 兒	ere
-爾	erh
 輀	eri
 兒	erj
 唲	erk
@@ -2662,7 +2662,7 @@ B站	bvj
 好像是	hxu
 化爲	hxw
 壞消息	hxx
-壞心眼	hxy
+畫	hxy
 黑匣子	hxz
 葷	hyc
 渾	hyd
@@ -2985,7 +2985,7 @@ B站	bvj
 出現在	ixz
 屯	iya
 蓴	iyc
-常言道	iyd
+淳	iyd
 差一個	iyg
 差異化	iyh
 脣	iyi
@@ -4137,7 +4137,7 @@ B站	bvj
 買得到	mdd
 馬大哈	mdh
 蝐	mdi
-馬德里	mdl
+麥當勞	mdl
 鷶	mdn
 脈	mdo
 埋	mdt
@@ -5248,6 +5248,7 @@ B站	bvj
 擾	rcf
 蟯	rci
 鐃	rcj
+容錯率	rcl
 人聰明	rcm
 嬈	rcn
 饒	rcu
@@ -6427,7 +6428,7 @@ B站	bvj
 稚	vih
 蟄	vii
 幟	vij
-只	vik
+知	vik
 支持率	vil
 枝	vim
 鷙	vin
@@ -6438,10 +6439,10 @@ B站	bvj
 紙	vis
 至	vit
 知	viu
-至	viv
+隻	viv
 致	viw
 志	vix
-隻	viy
+製	viy
 趾	viz
 占	vjb
 蘸	vjc
@@ -6450,7 +6451,7 @@ B站	bvj
 戰	vjg
 斬	vji
 斬	vjj
-呫	vjk
+占	vjk
 盞	vjm
 鸇	vjn
 瞻	vjo
@@ -6825,7 +6826,7 @@ B站	bvj
 武	wuv
 吾	wuw
 舞	wux
-武	wuy
+誤	wuy
 迕	wuz
 無止境	wvj
 捂着頭	wvt
@@ -32195,7 +32196,7 @@ B站	bvj
 吒	iikt
 喫苦	iiku
 喫虧	iikv
-嗤啦	iila
+喫辣	iila
 遲來	iild
 喫了	iile
 遲了	iile
@@ -48910,7 +48911,6 @@ B站	bvj
 哪點	nadm
 拿掉	nadn
 那段	nadr
-哪兒	naer
 那兒	naer
 那份	naff
 納福	nafu
@@ -48939,7 +48939,6 @@ B站	bvj
 內	nakr
 那款	nakr
 拿來	nald
-哪裏	nali
 那裏	nali
 納蘭	nalj
 納涼	nall
@@ -48987,7 +48986,6 @@ B站	bvj
 貀	navi
 豽	navn
 那種	navs
-哪種	navs
 拿住	navu
 拿問	nawf
 那晚	nawj
@@ -50679,7 +50677,7 @@ B站	bvj
 內線	nwxm
 內陷	nwxm
 內銷	nwxn
-哪些	nwxp
+那些	nwxp
 內秀	nwxq
 內兄	nwxs
 內需	nwxu
@@ -69452,6 +69450,7 @@ B站	bvj
 知道	vidc
 指導	vidc
 鑄成大錯	vidc
+之	vidd
 滯	vidd
 紙袋	vidd
 紙帶	vidd
@@ -74220,7 +74219,6 @@ B站	bvj
 五嶽	wuyt
 無語	wuyu
 物慾	wuyu
-誤	wuyw
 霧	wuyw
 誣	wuyw
 爲時已晚	wuyw

@@ -11,11 +11,18 @@ patch:
     - { when: always, accept: Control+p, toggle: ascii_punct }
     - { when: paging, accept: comma, send: Page_Up }
     - { when: has_menu, accept: period, send: Page_Down }
-    - { when: has_menu, accept: semicolon, send: 2 } 
-    - { when: has_menu, accept: apostrophe, send: 3 }
+    # - { when: has_menu, accept: semicolon, send: 2 } 
+    # - { when: has_menu, accept: apostrophe, send: 3 }
   menu/page_size: 4
   # menu/alternative_select_labels: [〡,〢,〣,〤,〥,〦,〧,〨,〩]
   # menu/alternative_select_labels: [1, 2, 3, 4, 5, 6, 7, 8, 9]
   schema_list:
     - schema: moran
     - schema: moran_japanese
+  ascii_composer/switch_key: 
+    Shift_L: noop
+    Shift_R: noop
+    Control_L: commit_code
+    Control_R: noop
+    Caps_Lock: clear
+    Eisu_toggle: clear

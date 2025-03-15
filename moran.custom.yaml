@@ -29,9 +29,10 @@ patch:
       reset: 0
     - name: simplification
       reset: 0
+    - name: inflexible
+      reset: 1
     - name: chaifen
     # 用不到的开关，放在這裡备用
-    - name: inflexible
     - name: full_shape
     - name: unicode_comment
 
@@ -96,7 +97,7 @@ patch:
     - { accept: Control+Shift+O, toggle: std_opencc, when: always }
 
   # 使用鹤版固頂詞庫
-  fixed/dictionary: moran_fixed_flypy
+  fixed/dictionary: moran_fixed.flypy
 
   # 使用鹤音
   algebra/user_sentence_top/__append/+:
