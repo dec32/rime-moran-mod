@@ -1,0 +1,19 @@
+/*
+!.gitignore
+
+# rime
+!default.custom.yaml
+!weasel.custom.yaml
+!symbols.custom.yaml
+
+# moran
+!moran.custom.yaml
+!moran_fixed.custom.yaml
+!moran_fixed.flypy.dict.yaml
+!moran_custom_phrases.txt
+
+# opencc
+
+# tool
+!install.sh
+

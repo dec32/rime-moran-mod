@@ -1,0 +1,4 @@
+patch:
+  translator/dictionary: moran_fixed.flypy
+  fixed/dictionary: moran_fixed.flypy
+  zkci/dictionary: moran_fixed.flypy
