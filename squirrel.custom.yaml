@@ -1,0 +1,5 @@
+patch:
+  app_options:
+  style/color_scheme: mac_blue
+  style/color_scheme_dark: mac_dark
+  style/text_orientation: horizontal
