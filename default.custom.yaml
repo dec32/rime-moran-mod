@@ -8,7 +8,8 @@ patch:
   key_binder/bindings/+:
     - { when: always, accept: Control+Shift+M, select: moran }
     - { when: always, accept: Control+Shift+J, select: moran_japanese }
-    - { when: always, accept: Control+p, toggle: ascii_punct }
+    - { accept: Control+Shift+S, toggle: simplification, when: always }
+    - { accept: Control+Shift+P, toggle: ascii_punct, when: always }
     - { when: paging, accept: comma, send: Page_Up }
     - { when: has_menu, accept: period, send: Page_Down }
     # - { when: has_menu, accept: semicolon, send: 2 }
