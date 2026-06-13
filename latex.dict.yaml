@@ -1,0 +1,126 @@
+---
+name: latex
+version: "2026.06.13"
+sort: original
+columns:
+  - text
+  - code
+...
+
+# Relations
+
+<	/lt
+≤	/le
+>	/gt
+≥	/ge
+≠	/ne
+≈	/approx
+≅	/cong
+≡	/equiv
+
+# Arrows
+
+→	/to
+←	/from
+↔	/iff
+
+⟶	/longto
+⟵	/longfrom
+
+⟹	/implies
+⟸	/impliedby
+⟺	/iff
+
+# Logic
+
+∀	/forall
+∃	/exists
+∄	/nexists
+¬	/neg
+
+∧	/and
+∨	/or
+
+# Sets
+
+∈	/in
+∉	/notin
+∋	/contains
+∅	/emptyset
+
+∩	/intersection
+∪	/union
+
+⊂	/subset
+⊆	/subseteq
+
+⊃	/supset
+⊇	/supseteq
+
+# Calculus
+
+∂	/partial
+∇	/nabla
+
+∫	/int
+∬	/iint
+∭	/iiint
+∮	/oint
+
+∑	/sum
+∏	/prod
+
+# Geometry
+
+⊥	/perp
+∥	/parallel
+∠	/angle
+△	/triangle
+
+# Misc
+
+∞	/infty
+
+±	/pm
+∓	/mp
+
+×	/times
+÷	/div
+
+√	/sqrt
+
+°	/deg
+
+# Number Sets
+
+ℝ	/Reals
+ℂ	/Complexes
+ℤ	/Integers
+ℕ	/Naturals
+
+# Greek Lowercase
+
+α	/alpha
+β	/beta
+γ	/gamma
+δ	/delta
+ε	/epsilon
+θ	/theta
+λ	/lambda
+μ	/mu
+π	/pi
+ρ	/rho
+σ	/sigma
+φ	/phi
+ω	/omega
+
+# Greek Uppercase
+
+Γ	/Gamma
+Δ	/Delta
+Θ	/Theta
+Λ	/Lambda
+Π	/Pi
+Σ	/Sigma
+Φ	/Phi
+Ω	/Omega

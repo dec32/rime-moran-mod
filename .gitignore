@@ -5,4 +5,5 @@
 # RIME
 !*.custom.yaml
 !moran_fixed.flypy.dict.yaml
+!latex.dict.yaml
 

@@ -22,39 +22,20 @@ encoder:
       formula: "AaBaCaZa"
 import_tables:
   - moran_fixed.symbols
+  - latex
 ...
 
-#----------標點符號----------#
-# 第一排
-：“	;q
-？	;w
-（	;e
-）	;r
-~	;t
-·	;y
-『	;u
-』	;i
-〖	;o
-〗	;p
-# 第二排
-！	;a
-……	;s
-#重複上屏	;d
-“	;f
-”	;g
-‘	;h
-’	;j
-——	;k
-%	;l
-；	;;
-# 第三排
-。”	;z
-？”	;x
-！”	;c
-【	;v
-】	;b
-《	;n
-》	;m
+#----------模擬固詞模式----------#
+
+變成	bmig
+便利	bmli
+那兒	naer
+那個	nage
+那裏	nali
+那種	navs
+那些	naxp
+注意	vuyi
+眼睛	yjjk
 
 #----------詞庫----------#
 啊	a
