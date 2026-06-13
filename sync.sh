@@ -32,6 +32,7 @@ fi
 # Target download URL
 URL="https://github.com/rimeinn/rime-moran/releases/latest/download/Trad-FullPack.zip"
 ZIP_NAME="Trad-FullPack.zip"
+MODEL_URL="https://media.githubusercontent.com/media/rimeinn/octagram-data/refs/heads/master/models/fcitx/fcitx-zh-hant.gram?download=true"
 
 echo "Downloading the latest version of Moran..."
 
@@ -46,11 +47,15 @@ fi
 
 echo "Extracting files..."
 
-# -n flag: never overwrite existing files
 # -q flag: quiet mode
-unzip -nq "$ZIP_NAME"
+unzip -q "$ZIP_NAME"
 
 # Remove the zip archive
 rm "$ZIP_NAME"
+
+echo "Downloading the language model..."
+
+# Download the model
+curl -L -O "$MODEL_URL"
 
 echo "Complete."

@@ -59,6 +59,12 @@ patch:
     # 字形遍歷
     - { accept: Control+Shift+O, toggle: std_opencc, when: always }
 
+  # 整句模型
+  grammar:
+    language: fcitx-zh-hant
+    collocation_max_length: 7
+    collocation_min_length: 3
+
   # 使用鹤版固頂詞庫
   fixed/dictionary: moran_fixed.flypy
 
