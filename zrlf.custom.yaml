@@ -1,0 +1,17 @@
+patch:
+  speller/algebra:
+    # 韵母转成大写
+    - xform/^([a-z])([a-z])([a-z])([a-z])/$1\U$2$3\U$4/
+    - xform/Z/w/
+    - xform/P/y/
+    - xform/X/p/
+    - xform/L/d/
+    - xform/Y/k/
+    - xform/D/l/
+    - xform/B/z/
+    - xform/W/x/
+    - xform/K/c/
+    - xform/N/b/
+    - xform/C/n/
+    # 把大写转回小写
+    - xlit/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/
