@@ -22,7 +22,7 @@ encoder:
       formula: "AaBaCaZa"
 import_tables:
   - moran_fixed.symbols
-  - latex
+  - moran_fixed.latex
 ...
 
 #----------模擬固詞模式----------#
@@ -5028,11 +5028,11 @@ B站	bvj
 牆	qlp
 瞧了瞧	qlq
 繈	qls
-羣聊天	qlt
+墻	qlt
 嶈	qlu
 瑲	qlw
 請聯繫	qlx
-千里眼	qly
+羌	qly
 蹌	qlz
 前	qmb
 茜	qmc
