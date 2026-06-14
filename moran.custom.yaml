@@ -65,6 +65,9 @@ patch:
     collocation_max_length: 7
     collocation_min_length: 3
 
+  # 允许多个整句
+  smart/max_sentences: 2
+
   # 使用鹤版固頂詞庫
   fixed/dictionary: moran_fixed.flypy
 
