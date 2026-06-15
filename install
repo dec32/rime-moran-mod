@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Detect Proxy
+# proxy
 os_type="$(uname -s)"
 proxy=""
 
@@ -20,42 +20,15 @@ elif [[ "$os_type" == "Darwin" ]]; then
     fi
 fi
 
-## Apply proxy
 if [[ -n "$proxy" ]]; then
     export http_proxy="http://$proxy"
     export https_proxy="http://$proxy"
-    echo "Proxy detected: $proxy"
-else
-    echo "No proxy detected, using direct connection."
-fi
 
-# Target download URL
-URL="https://github.com/rimeinn/rime-moran/releases/latest/download/Trad-FullPack.zip"
-ZIP_NAME="Trad-FullPack.zip"
-MODEL_URL="https://media.githubusercontent.com/media/rimeinn/octagram-data/refs/heads/master/models/fcitx/fcitx-zh-hant.gram?download=true"
+# schema
+git clone https://github.com/rimeinn/rime-moran.git --branch trad --depth 1
+rm -rf rime-moran/.git
+mv rime-moran/* .
+rm -rf rime-moran
 
-echo "Downloading the latest version of Moran..."
-
-# Use curl to download; -L follows redirects, -O keeps the original filename
-curl -L -O "$URL"
-
-# Check if the download was successful
-if [ $? -ne 0 ]; then
-    echo "Download failed."
-    exit 1
-fi
-
-echo "Extracting files..."
-
-# -q flag: quiet mode
-unzip -q "$ZIP_NAME"
-
-# Remove the zip archive
-rm "$ZIP_NAME"
-
-echo "Downloading the language model..."
-
-# Download the model
-curl -L -O "$MODEL_URL"
-
-echo "Complete."
+# gram
+curl -L -O  "https://media.githubusercontent.com/media/rimeinn/octagram-data/refs/heads/master/models/fcitx/fcitx-zh-hant.gram?download=true"

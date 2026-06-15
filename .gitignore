@@ -1,6 +1,6 @@
 /*
 !.gitignore
-!sync.sh
+!install
 
 # RIME
 !*.custom.yaml
