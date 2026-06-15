@@ -17,8 +17,8 @@ patch:
   switches: 
     - name: ascii_mode
       states: [ 中文, 西文 ]
-    - name: simplification
-      states: [ 漢字, 汉字 ]
+    - options: [ std_t, std_t2s, std_t2tw, std_t2hk, std_t2jp, std_t2dzing ]
+      states: [ 繁, 简, 台, 港, 日, 寍 ]
       reset: 1
     - name: extended_charset
       states: [ 通用, 增廣 ]
@@ -57,7 +57,7 @@ patch:
     - { when: has_menu, accept: "Control+e", toggle: emoji }
     - { when: composing, accept: "Control+x", toggle: extended_charset }
     # 字形遍歷
-    - { accept: Control+Shift+O, toggle: std_opencc, when: always }
+    - { accept: Control+Shift+O, toggle: std_t, when: always }
 
   # 整句模型
   grammar:

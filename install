@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # proxy
 os_type="$(uname -s)"
@@ -23,6 +24,7 @@ fi
 if [[ -n "$proxy" ]]; then
     export http_proxy="http://$proxy"
     export https_proxy="http://$proxy"
+fi
 
 # schema
 git clone https://github.com/rimeinn/rime-moran.git --branch trad --depth 1
