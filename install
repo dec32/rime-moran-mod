@@ -29,7 +29,7 @@ fi
 # schema
 git clone https://github.com/rimeinn/rime-moran.git --branch trad --depth 1
 rm -rf rime-moran/.git
-mv rime-moran/* .
+cp -rf rime-moran/* .
 rm -rf rime-moran
 
 # gram
