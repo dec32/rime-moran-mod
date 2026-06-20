@@ -18,22 +18,24 @@ patch:
     - name: ascii_mode
       states: [ 中文, 西文 ]
     - options: [ std_t, std_t2s ]
-      states: [ 漢字, 汉字 ]
+      states: [ 繁體, 简体 ]
       reset: 1
-    - name: extended_charset
-      states: [ 通用, 增廣 ]
     - name: ascii_punct
       states: [ 。，, ．， ]
-    # Emoji 常关，默认简化器常关，拆字提示按需开启
+    # 隐藏以下开关
+    - name: extended_charset
+      reset: 0
     - name: emoji
+      reset: 0
+    - name: chaifen
       reset: 0
     - name: inflexible
       reset: 0
-    - name: chaifen
-    # 用不到的开关，放在這裡备用
     - name: full_shape
+      reset: 0
     - name: unicode_comment
-  
+      reset: 0
+
   # 不使用分号引导標点
   speller/alphabet: abcdefghijklmnopqrstuvwxyz/
 
